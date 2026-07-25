@@ -36,6 +36,20 @@ contraseña, ningún firewall, sistema desactualizado.
   algo sin que yo lo decida. Reinicio automático desactivado para evitar
   downtime sorpresa; se revisará manualmente cuando el sistema lo requiera.
 
+  ## Backups (plan)
+
+- Estrategia: disco secundario dedicado a backups (no RAID), liberando el
+  puerto SATA del lector DVD original del OptiPlex 3010.
+- Justificación: en un homelab de aprendizaje, los errores humanos
+  (borrar algo por accidente, comandos destructivos mientras se aprende)
+  son más probables que fallas de hardware. RAID protege de lo segundo,
+  no de lo primero.
+- Off-site: pendiente, evaluado y descartado por ahora (Nivel 1). Se
+  reconsiderará cuando haya datos de valor real (ej. Vaultwarden, Gitea).
+- Herramienta planeada: restic o borgbackup (backups incrementales,
+  cifrados). Pendiente de instalación hasta contar con el disco físico.
+- Estado: 🟡 Plan definido, implementación pendiente de hardware.
+
 ## Qué se implementó
 
 1. Generación de par de llaves SSH (ed25519) en el cliente, con passphrase.
